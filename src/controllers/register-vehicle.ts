@@ -1,6 +1,8 @@
+import { HttpResponse, HttpRequest } from '../interfaces/http-interface'
+
 export class RegisterVehicle {
-  handle (httpRequest: any): any {
-    if (httpRequest.body.model === 3) { // To fix
+  handle (httpRequest: HttpRequest): HttpResponse {
+    if ('model' in httpRequest.body) {
       return {
         statusCode: 400,
         body: new Error('error in: model')

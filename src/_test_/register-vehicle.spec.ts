@@ -1,3 +1,4 @@
+import { MissingFormalParameter } from '../errors/client-error'
 import { RegisterVehicle } from './../controllers/register-vehicle'
 
 describe('Register vehicle', () => {
@@ -14,7 +15,7 @@ describe('Register vehicle', () => {
     const httpResponse = sut.handle(httpRequest)
 
     expect(httpResponse.statusCode).toBe(400)
-    expect(httpResponse.body.message).toBe('error in: name')
+    expect(httpResponse.body).toMatchObject(new MissingFormalParameter('error in: name'))
   })
 
   test('If model does not exists return 400', () => {
@@ -30,7 +31,7 @@ describe('Register vehicle', () => {
     const httpResponse = sut.handle(httpRequest)
 
     expect(httpResponse.statusCode).toBe(400)
-    expect(httpResponse.body.message).toBe('error in: model')
+    expect(httpResponse.body).toMatchObject(new MissingFormalParameter('error in: model'))
   })
 
   test('If year does not exists return 400', () => {
@@ -46,7 +47,7 @@ describe('Register vehicle', () => {
     const httpResponse = sut.handle(httpRequest)
 
     expect(httpResponse.statusCode).toBe(400)
-    expect(httpResponse.body.message).toBe('error in: year')
+    expect(httpResponse.body).toMatchObject(new MissingFormalParameter('error in: year'))
   })
 
   test('If everithing OK return 200', () => {

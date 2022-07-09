@@ -1,0 +1,23 @@
+{
+  "name": "curso-node-clean-code-solid",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mazcuiFede/curso-node-clean-code-solid.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mazcuiFede/curso-node-clean-code-solid/issues"
+  },
+  "homepage": "https://github.com/mazcuiFede/curso-node-clean-code-solid#readme",
+  "dependencies": {
+    "git-commit-msg-linter": "^4.1.3"
+  }
+}
